@@ -4,25 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <!--  Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind play cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="src/tailwind.config.js"></script>
+
+  <!-- Alpine.js  -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Advice generator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
+<body class="bg-blue-dark h-screen antialiased">
 
-  Advice #<!-- Advice ID goes here -->
+<main x-data="advice" class="h-screen grid place-items-center">
 
-  "<!-- Advice text goes here -->"
-  
+  <div class="relative mx-4 max-w-sm rounded-2xl px-4 pt-8 pb-16 bg-blue-grayish-dark lg:max-w-md lg:mx-auto">
+    <h1 class="text-green-neon uppercase text-center tracking-widest">Advice #117 <span x-text="advice.id"></span></h1>
+    <p class="text-cyan-light text-large text-center">"It is easy to sit up and take notice, what's difficult is getting up and taking action."</p>
+    <img class="lg:hidden" src="images/pattern-divider-mobile.svg" alt="divider">
+    <img class="hidden lg:block" src="images/pattern-divider-desktop.svg" alt="divider">
+    <div class="absolute -bottom-7 inset-x-0 flex justify-center">
+      <button class="bg-green-neon rounded-full p-4" @click="randomAdvice()"><img src="images/icon-dice.svg" alt="pick advice"></button>
+    </div>
+  </div>
+</main>
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="src/advice.js"></script>
 </body>
 </html>
