@@ -4,8 +4,8 @@ tailwind.config = {
             'sans': ['Manrope', 'sans-serif']
         },
         extend: {
-            fontSize: {
-              'large': '28px'
+            boxShadow: {
+                'around': '0 0 30px 2px rgba(0, 0, 0, 0.2)',
             },
             colors: {
                 'cyan-light': 'hsl(193, 38%, 86%)',
