@@ -1,10 +1,11 @@
-window.advice = function () {
+window.adviceJS = function () {
     return {
-        adviceStartSlip : {slip: {advice: "It is easy to sit up and take notice, what's difficult is getting up and taking action.", id:117}},
-        adviceRandom : 'https://api.adviceslip.com/advice',
+        content: {slip:{advice: "It is easy to sit up and take notice, what's difficult is getting up and taking action.", id:117}},
 
-        get randomAdvice(url) {
-            return response = await fetch(url, {cache: 'no-cache'}).then(response => response.json()).then(data => console.log(data));
-        },
+        getAdvice() {
+            fetch('https://api.adviceslip.com/advice', {cache: 'no-cache'})
+                .then(response => response.json())
+                .then(data => this.content = data)
+        }
     }
 }

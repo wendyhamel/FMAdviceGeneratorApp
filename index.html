@@ -23,16 +23,15 @@
 </head>
 <body class="bg-blue-dark h-screen antialiased">
 
-<main x-data="advice" class="h-screen grid place-items-center">
-
-  <div class="max-w-sm lg:max-w-xl lg:px-4">
+<main class="h-screen grid place-items-center">
+  <div x-data="adviceJS()" class="max-w-sm lg:max-w-xl lg:px-4">
     <div class="relative mx-4 rounded-2xl px-6 pt-10 pb-16 bg-blue-grayish-dark lg:mx-auto lg:px-12 lg:pt-12 lg:pb-[72px]">
-      <h1 class="text-green-neon uppercase text-center tracking-[0.2em] text-xs pb-4 lg:text-sm lg:tracking-[0.25em] lg:pb-6">Advice #117 <span x-text="advice.id"></span></h1>
-      <p class="text-cyan-light text-[24px] leading-snug text-center pb-6 lg:text-[28px] lg:pb-10">"It is easy to sit up and take notice, what's difficult is getting up and taking action."</p>
+      <h1 class="text-green-neon uppercase text-center tracking-[0.2em] text-xs pb-4 lg:text-sm lg:tracking-[0.25em] lg:pb-6">Advice #<span x-text="content.slip.id"></span></h1>
+      <p class="text-cyan-light text-[24px] leading-snug text-center pb-6 lg:text-[28px] lg:pb-10">"<span x-text="content.slip.advice"></span>"</p>
       <img class="lg:hidden" src="images/pattern-divider-mobile.svg" alt="divider">
       <img class="hidden lg:block" src="images/pattern-divider-desktop.svg" alt="divider">
       <div class="absolute -bottom-8 inset-x-0 flex justify-center lg:-bottom-9">
-        <button class="bg-green-neon rounded-full p-5 lg:hover:shadow-around lg:hover:shadow-green-neon ease-in-out duration-300" @click="randomAdvice()"><img src="images/icon-dice.svg" alt="pick advice"></button>
+        <button @click="getAdvice()" class="bg-green-neon rounded-full p-5 lg:hover:shadow-around lg:hover:shadow-green-neon ease-in-out duration-300"><img src="images/icon-dice.svg" alt="pick advice"></button>
       </div>
     </div>
   </div>
@@ -42,6 +41,6 @@
     Challenge by <a class="text-white hover:underline hover:underline ease-in-out duration-150" href="https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db" target="_blank">Frontend Mentor</a>.
     Coded by <a class="text-white hover:underline hover:underline ease-in-out duration-150" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
   </footer>
-  <script src="src/advice.js"></script>
+  <script type="text/javascript" src="src/advice.js"></script>
 </body>
 </html>
